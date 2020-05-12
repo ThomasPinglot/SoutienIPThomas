@@ -32,21 +32,7 @@ public class Vigenere
 
     public string Decrypt(string cypherText)
     {
-        string a = "";
-        int count = 0;
-        int len = Key.Length;
-        foreach (char c in cypherText)
-        {
-            if (count == len)
-            {
-                count = 0;
-            }
-            a += Tools.RotChar(c, -Key[count]);
-            count += 1;
-
-        }
-
-        return a;
+        throw new NotImplementedException();
     }
 
     public static string GuessKeyWithLength(string cypherText, int keyLength)
