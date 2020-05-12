@@ -1,12 +1,14 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Cryptanalysis
 {
 public class Caesar
 {
+    private int Key;
     public Caesar(int key)
     {
-        throw new NotImplementedException();
+        this.Key = key;
     }
 
     public string Encrypt(string msg)

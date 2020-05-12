@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Cryptanalysis
 {
@@ -39,12 +40,49 @@ public static class Tools
     
     public static char RotChar(char c, int n)
     {
-        throw new NotImplementedException();
+        if (90 >= Convert.ToInt32(c) && Convert.ToInt32(c) >= 65 )
+        {
+            if (90 < Convert.ToInt32(c) + n )
+            {
+                return Convert.ToChar(Convert.ToInt32(c) + n - 26);
+            }
+
+            if (Convert.ToInt32(c) + n  < 65 )
+            {
+                return Convert.ToChar(Convert.ToInt32(c) + n + 26);
+            }
+            return Convert.ToChar(Convert.ToInt32(c) + n);
+        }
+
+        if (122 >= Convert.ToInt32(c) && Convert.ToInt32(c) >= 97 )
+        {
+            if (122 < Convert.ToInt32(c) + n )
+            {
+                return Convert.ToChar(Convert.ToInt32(c) + n - 26);
+            }
+
+            if (Convert.ToInt32(c) + n  < 97 )
+            {
+                return Convert.ToChar(Convert.ToInt32(c) + n + 26);
+            }
+            return Convert.ToChar(Convert.ToInt32(c) + n);
+        }
+
+        return c;
     }
 
     public static int[] Histogram(string str)
     {
-        throw new NotImplementedException();
+        int[] list = new[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        foreach (char c in str)
+        {
+            if (LetterIndex(c) != -1)
+            {
+                list[LetterIndex(c)] += 1;
+            }
+        }
+
+        return list;
     }
     
     public static string FilterLetters(string str)
