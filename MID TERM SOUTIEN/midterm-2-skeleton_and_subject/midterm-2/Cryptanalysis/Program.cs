@@ -7,7 +7,9 @@ internal static class Program
     private static void Main()
     {
         // Put your tests here.
-        Console.WriteLine(Tools.LetterIndex('4'));
+        Caesar simple = new Caesar(3);
+        simple.Encrypt("My exam is so interesting! Thanks ACDC <3");
+        
         Test();
     }
 
